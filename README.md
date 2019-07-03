@@ -16,6 +16,12 @@ $config['header_js'] = [];
 $config['footer_js'] = [];
 ```
 
+Se pueden agregar archivos de una vez en la configuración
+
+```php
+$config['header_css'] = ['https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'];
+```
+
 ---
 
 En los view correspondientes al Header o Footer agregar:
