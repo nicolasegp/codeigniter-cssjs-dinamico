@@ -40,7 +40,7 @@ if(!function_exists('render_arch_header')) {
 			echo '<link rel="stylesheet" href="'.$V.'">'.PHP_EOL;
 		}
 		foreach($JS as $V) {
-			echo '<script src="'.$V.'"></script>';
+			echo '<script src="'.$V.'"></script>'.PHP_EOL;
 		}
 	}
 }
@@ -50,7 +50,7 @@ if(!function_exists('render_arch_footer')) {
 		$CI  = &get_instance();
 		$JS  = $CI->config->item('footer_js');
 		foreach($JS as $V) {
-			echo '<script src="'.$V.'"></script>';
+			echo '<script src="'.$V.'"></script>'.PHP_EOL;
 		}
 	}
 }
