@@ -60,7 +60,10 @@ class Blog extends CI_Controller {
 	public function index() {
 		$this->load->helper('cssjs');
 		add_css('https://cdn.dominio.com/framework.min.css');
-		add_css([base_url('css/archivo1.css'), base_url('css/archivo2.css')]);
+		add_css([
+			base_url('css/archivo1.css'),
+			base_url('css/archivo2.css')
+		]);
 		add_css(base_url('css/archivo3.css'));
 		
 		// Con el segundo parametro con true
@@ -69,7 +72,10 @@ class Blog extends CI_Controller {
 		
 		// De no usar el segundo parametro
 		// se agregara al final de la página
-		add_js([base_url('js/archivo1.js'), base_url('js/archivo2.js')]);
+		add_js([
+			base_url('js/archivo1.js'),
+			base_url('js/archivo2.js')
+		]);
 
 		$this->load->view('header');
 		$this->load->view('blog/inicio', $Datos);
