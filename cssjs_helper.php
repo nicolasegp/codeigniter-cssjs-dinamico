@@ -37,9 +37,15 @@ if(!function_exists('render_arch_header')) {
 		$CSS = $CI->config->item('header_css');
 		$JS  = $CI->config->item('header_js');
 		foreach($CSS as $V) {
+			if(!in_array(parse_url($V, PHP_URL_SCHEME), ['http', 'https', 'ftp'])) {
+				$V = base_url($V);
+			}
 			echo '<link rel="stylesheet" href="'.$V.'">'.PHP_EOL;
 		}
 		foreach($JS as $V) {
+			if(!in_array(parse_url($V, PHP_URL_SCHEME), ['http', 'https', 'ftp'])) {
+				$V = base_url($V);
+			}
 			echo '<script src="'.$V.'"></script>'.PHP_EOL;
 		}
 	}
@@ -50,6 +56,9 @@ if(!function_exists('render_arch_footer')) {
 		$CI  = &get_instance();
 		$JS  = $CI->config->item('footer_js');
 		foreach($JS as $V) {
+			if(!in_array(parse_url($V, PHP_URL_SCHEME), ['http', 'https', 'ftp'])) {
+				$V = base_url($V);
+			}
 			echo '<script src="'.$V.'"></script>'.PHP_EOL;
 		}
 	}
